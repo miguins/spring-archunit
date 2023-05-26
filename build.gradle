@@ -1,0 +1,39 @@
+plugins {
+    id 'application'
+    id 'java'
+    id 'jacoco'
+    id 'org.springframework.boot' version '2.7.12'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'br.com.archunit.poc'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+//subprojects {
+//    dependencies {
+//        testImplementation 'com.tngtech.archunit:archunit-junit5:1.0.1'
+//    }
+//}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    testImplementation 'com.tngtech.archunit:archunit-junit5:1.0.1'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+
+application {
+    mainClass = "br.com.archunit.poc.Main"
+}
