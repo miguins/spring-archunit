@@ -1,3 +1,0 @@
-rootProject.name = 'sprint-archunit'
-include 'code-coverage'
-
